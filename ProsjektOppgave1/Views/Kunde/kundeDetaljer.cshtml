@@ -1,0 +1,42 @@
+﻿@model ProsjektOppgave1.Models.Kunde
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detajer</h2>
+
+<div>
+    <h4>Kunde</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fornavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fornavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Etternavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etternavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresse)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Til kundeliste", "kundeListe")
+    @Html.ActionLink("Hjem", "Home")
+    
+</p>

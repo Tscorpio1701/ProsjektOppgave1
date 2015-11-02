@@ -1,0 +1,48 @@
+﻿@model ProsjektOppgave1.Models.Vare
+
+@{
+    ViewBag.Title = "slettVare";
+}
+
+<h2>Slett Vare</h2>
+
+<h3>Er du sikker at du ønsker å slette denne varen?</h3>
+<div>
+    <h4>Vare</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Varenavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Varenavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pris)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pris)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Varebeholdning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Varebeholdning)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Tilbake til vareliste", "VareListe")
+        </div>
+    }
+</div>

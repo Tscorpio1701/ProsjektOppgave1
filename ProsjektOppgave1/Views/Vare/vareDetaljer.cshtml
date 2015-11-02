@@ -1,0 +1,43 @@
+﻿@model ProsjektOppgave1.Models.Vare
+@{
+    ViewBag.Title = "vareDetaljer";
+}
+
+<h2>Vare Detaljer</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Varenavn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Varenavn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pris)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pris)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Varebeholdning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Varebeholdning)
+        </dd>
+
+       
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Endre", "EndreVare", new { id = Model.ID }) <br />
+    @Html.ActionLink("Tilbake til Liste", "VareListe")<br />
+    @Html.ActionLink("Hjem", "Home") <br />
+</p>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProsjektOppgave1.Models.Vare>
+
+@{
+    ViewBag.Title = "VareListe";
+}
+
+<h2>Vare Liste</h2>
+
+<p>
+    @Html.ActionLink("Legg til vare", "RegistrerVare")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Varenavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pris)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Varebeholdning)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Varenavn
+            </td>
+            <td>
+                @item.Pris
+            </td>
+            <td>
+                @item.Varebeholdning
+            </td>
+            <td>
+                @Html.ActionLink("Endre", "EndreVare", new { id = item.ID }) |
+                @Html.ActionLink("Vare Detalje", "VareDetaljer", new { id = item.ID }) |
+                @Html.ActionLink("Slett", "slettVare", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

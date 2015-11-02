@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ProsjektOppgave1.Models.Kunde>
+
+@{
+    ViewBag.Title = "Kundeliste";
+}
+
+<h2>Kunde Liste</h2>
+
+<p>
+    @Html.ActionLink("Legg til kunde", "Registrer")
+    @Html.ActionLink("Vareliste", "visVarer")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fornavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Etternavn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresse)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Fornavn
+        </td>
+        <td>
+            @item.Etternavn
+        </td>
+        <td>
+            @item.Adresse
+        </td>
+        <td>
+            @Html.ActionLink("Endre", "Endre", new { id=item.ID }) |
+            @Html.ActionLink("Detaljer", "kundeDetaljer", new { id=item.ID }) |
+            @Html.ActionLink("Slett", "slettKunde", new { id=item.ID }) |
+            @Html.ActionLink("Vis bestillinger", "visBestilling", new { id=item.ID}) |
+            @Html.ActionLink("Bestill vare", "kundeBestill", new { id=item.ID })
+        </td>
+    </tr>
+}
+    @Html.ActionLink("Hjem", "Home")
+    
+
+
+</table>

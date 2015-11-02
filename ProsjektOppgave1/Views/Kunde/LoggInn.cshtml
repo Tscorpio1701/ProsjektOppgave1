@@ -1,0 +1,60 @@
+﻿@model ProsjektOppgave1.Models.Kunde
+
+@{
+    ViewBag.Title = "Logg inn";
+}
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Logg inn</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Fornavn)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Fornavn)
+                @Html.ValidationMessageFor(model => model.Fornavn)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Passord)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Passord)
+                @Html.ValidationMessageFor(model => model.Passord)
+            </div>
+
+            <p>
+                <input type="submit" value="Logg inn" />
+            </p>
+
+            
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Hjem", "Home") <br />
+        @Html.ActionLink("Register Kunde", "Create") <br />
+        @Html.ActionLink("Logg Ut", "UtLogg")<br />
+    </div>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Logg inn</title>
+</head>
+<body>
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿@model ProsjektOppgave1.Models.Kunde
+
+@{
+    ViewBag.Title = "Registrer kunde";
+}
+
+<h2>Registrer Kunde</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+   
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fornavn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fornavn)
+            @Html.ValidationMessageFor(model => model.Fornavn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Etternavn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Etternavn)
+            @Html.ValidationMessageFor(model => model.Etternavn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Adresse)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Adresse)
+            @Html.ValidationMessageFor(model => model.Adresse)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Passord)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Passord)
+            @Html.ValidationMessageFor(model => model.Passord)
+        </div>
+
+    </fieldset>
+
+    <p>
+        <input type="submit" value="Registrer" />
+    </p>
+}
+
+
+
+<div>
+    @Html.ActionLink("Til Kundeliste", "kundeListe")
+    @Html.ActionLink("Til hjemmeside", "Home")
+    
+</div>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
